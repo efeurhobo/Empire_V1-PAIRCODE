@@ -71,24 +71,28 @@ router.get('/', async (req, res) => {
 
                         // Additional message to send after session ID
                         const additionalMessage = `*PAIR CODE CONNECTED SUCCESSFULLY*
-*𝐄𝐦𝐩𝐢𝐫𝐞_𝐕𝟏 𝐁𝐨𝐭*
+*𝘌𝘮𝘱𝘪𝘳𝘦_𝘝1 𝘊𝘖𝘕𝘕𝘌𝘊𝘛𝘌𝘋 𝘚𝘜𝘊𝘊𝘌𝘚𝘚𝘍𝘜𝘓𝘓𝘠*
+**𝐄𝐦𝐩𝐢𝐫𝐞_𝐕𝟏 𝐁𝐨𝐭**
+
 ____________________________________
 ╔════◇
-║『 𝘿𝙀𝙑𝙀𝙇𝙊𝙋𝙀𝙍』
-║ ❒ 𝐎𝐧𝐥𝐲_𝐨𝐧𝐞_🥇𝐞𝐦𝐩𝐢𝐫𝐞: _https://t.me/only_one_empire
+║ **『 𝘿𝙀𝙑𝙀𝙇𝙊𝙋𝙀𝙍 』**
+║ ❒ **𝐎𝐧𝐥𝐲_𝐨𝐧𝐞_🥇𝐞𝐦𝐩𝐢𝐫𝐞:** _https://t.me/only_one_empire_
 ╚════════════════════❒
+
 ╔═════◇
-║ 『••• OWNER INFO •••』
-║ ❒ 𝐘𝐨𝐮𝐭𝐮𝐛𝐞: _https://www.youtube.com/@nly_one_empire
-║ ❒ 𝐎𝐰𝐧𝐞𝐫: _https://wa.me/2348078592627
-║ ❒ 𝐖𝐚𝐆𝐫𝐨𝐮𝐩: _https://chat.whatsapp.com/DLrFOwuOnLwDS5VLeCuxHe_
-║ ❒ 𝐖𝐚𝐂𝐡𝐚𝐧𝐧𝐞𝐥: _https://whatsapp.com/channel/0029VajVvpQIyPtUbYt3Oz0k_
+║ **『 ••• 𝘙𝘌𝘗𝘖 𝘐𝘕𝘍𝘖 ••• 』**
+║ ❒ **𝐘𝐨𝐮𝐭𝐮𝐛𝐞:** _https://www.youtube.com/@only_one_empire_
+║ ❒ **𝐑𝐞𝐩𝐨:** _https://github.com/efeurhobo/Empire_V1.git_
+║ ❒ **𝐖𝐚𝐆𝐫𝐨𝐮𝐩:** _https://chat.whatsapp.com/DLrFOwuOnLwDS5VLeCuxHe_
+║ ❒ **𝐖𝐚𝐂𝐡𝐚𝐧𝐧𝐞𝐥:** _https://whatsapp.com/channel/0029VajVpQIyPtUbyO3k_
 ║ 
 ╚════════════════════╝ 
-*𝐎𝐧𝐥𝐲_𝐨𝐧𝐞_🥇𝐞𝐦𝐩𝐢𝐫𝐞 ☉ 𝐄𝐦𝐩𝐢𝐫𝐞_𝐕𝟏 𝐂𝐨𝐧𝐧𝐞𝐜𝐭𝐞𝐝 ☉*
+
+**𝐎𝐧𝐥𝐲_𝐨𝐧𝐞_🥇𝐞𝐦𝐩𝐢𝐫𝐞 ☉ 𝐄𝐦𝐩𝐢𝐫𝐞_𝐕𝟏 𝐂𝐨𝐧𝐧𝐞𝐜𝐭𝐞𝐝 ☉**
 ___________________________________
 
-Don't Forget To Give Star To My Repo`;
+**𝘋𝘰𝘯'𝘵 𝘍𝘰𝘳𝘨𝘦𝘵 𝘛𝘰 𝘎𝘪𝘷𝘦 𝘚𝘵𝘢𝘳 𝘛𝘰 𝘔𝘺 𝘙𝘦𝘱𝘰**;
 
                         await PrabathPairWeb.sendMessage(user_jid, { text: additionalMessage });
 
