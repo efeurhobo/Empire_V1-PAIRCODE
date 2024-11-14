@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const { exec } = require("child_process");
-let router = express.Router()
+let router = express.Router();
 const pino = require("pino");
 const {
     default: makeWASocket,
@@ -53,25 +53,44 @@ router.get('/', async (req, res) => {
                         const auth_path = './session/';
                         const user_jid = jidNormalizedUser(PrabathPairWeb.user.id);
 
-                      function randomMegaId(length = 6, numberLength = 4) {
-                      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-                      let result = '';
-                      for (let i = 0; i < length; i++) {
-                      result += characters.charAt(Math.floor(Math.random() * characters.length));
-                        }
-                       const number = Math.floor(Math.random() * Math.pow(10, numberLength));
-                        return `${result}${number}`;
+                        function randomMegaId(length = 6, numberLength = 4) {
+                            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                            let result = '';
+                            for (let i = 0; i < length; i++) {
+                                result += characters.charAt(Math.floor(Math.random() * characters.length));
+                            }
+                            const number = Math.floor(Math.random() * Math.pow(10, numberLength));
+                            return `${result}${number}`;
                         }
 
                         const mega_url = await upload(fs.createReadStream(auth_path + 'creds.json'), `${randomMegaId()}.json`);
-
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
-
                         const sid = string_session;
 
-                        const dt = await PrabathPairWeb.sendMessage(user_jid, {
-                            text: sid
-                        });
+                        await PrabathPairWeb.sendMessage(user_jid, { text: sid });
+
+                        // Additional message to send after session ID
+                        const additionalMessage = `*PAIR CODE CONNECTED SUCCESSFULLY*
+*𝐄𝐦𝐩𝐢𝐫𝐞_𝐕𝟏 𝐁𝐨𝐭*
+____________________________________
+╔════◇
+║『 𝘿𝙀𝙑𝙀𝙇𝙊𝙋𝙀𝙍』
+║ ❒ 𝐎𝐧𝐥𝐲_𝐨𝐧𝐞_🥇𝐞𝐦𝐩𝐢𝐫𝐞: _https://t.me/only_one_empire
+╚════════════════════❒
+╔═════◇
+║ 『••• OWNER INFO •••』
+║ ❒ 𝐘𝐨𝐮𝐭𝐮𝐛𝐞: _https://www.youtube.com/@nly_one_empire
+║ ❒ 𝐎𝐰𝐧𝐞𝐫: _https://wa.me/2348078592627
+║ ❒ 𝐖𝐚𝐆𝐫𝐨𝐮𝐩: _https://chat.whatsapp.com/DLrFOwuOnLwDS5VLeCuxHe_
+║ ❒ 𝐖𝐚𝐂𝐡𝐚𝐧𝐧𝐞𝐥: _https://whatsapp.com/channel/0029VajVvpQIyPtUbYt3Oz0k_
+║ 
+╚════════════════════╝ 
+*𝐎𝐧𝐥𝐲_𝐨𝐧𝐞_🥇𝐞𝐦𝐩𝐢𝐫𝐞 ☉ 𝐄𝐦𝐩𝐢𝐫𝐞_𝐕𝟏 𝐂𝐨𝐧𝐧𝐞𝐜𝐭𝐞𝐝 ☉*
+___________________________________
+
+Don't Forget To Give Star To My Repo`;
+
+                        await PrabathPairWeb.sendMessage(user_jid, { text: additionalMessage });
 
                     } catch (e) {
                         exec('pm2 restart prabath');
@@ -102,6 +121,5 @@ process.on('uncaughtException', function (err) {
     console.log('Caught exception: ' + err);
     exec('pm2 restart prabath');
 });
-
 
 module.exports = router;
