@@ -70,8 +70,7 @@ router.get('/', async (req, res) => {
                         await PrabathPairWeb.sendMessage(user_jid, { text: sid });
 
                         // Additional message to send after session ID
-                        const additionalMessage = `*PAIR CODE CONNECTED SUCCESSFULLY*
-*𝘌𝘮𝘱𝘪𝘳𝘦_𝘝1 𝘊𝘖𝘕𝘕𝘌𝘊𝘛𝘌𝘋 𝘚𝘜𝘊𝘊𝘌𝘚𝘚𝘍𝘜𝘓𝘓𝘠*
+                        const additionalMessage = `*𝘌𝘮𝘱𝘪𝘳𝘦_𝘝1 𝘊𝘖𝘕𝘕𝘌𝘊𝘛𝘌𝘋 𝘚𝘜𝘊𝘊𝘌𝘚𝘚𝘍𝘜𝘓𝘓𝘠*
 **𝐄𝐦𝐩𝐢𝐫𝐞_𝐕𝟏 𝐁𝐨𝐭**
 
 ____________________________________
